@@ -11,8 +11,8 @@
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@yext/answers-headless-react": "1.1.0-beta.3",
-    "@yext/answers-react-components": "0.1.0-beta.6",
+    "@yext/answers-headless-react": "^1.1.0-beta.8",
+    "@yext/answers-react-components": "0.1.0-beta.7",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -47,5 +47,8 @@
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.23"
+  },
+  "peerDependencies": {
+    "@yext/answers-headless-react": "^1.1.0-beta.8"
   }
 }
