@@ -3,18 +3,32 @@ import { VerticalResults, StandardCard } from '@yext/answers-react-components';
 import { Filters } from '@yext/answers-react-components';
 import { Result, useAnswersState } from '@yext/answers-headless-react';
 import { Fragment } from 'react';
+import usePageSetupEffect from '../hooks/defaultInitialSearch.tsx';
+import { applyFieldMappings } from '@yext/answers-react-components/lib/components/utils/applyFieldMappings';
+import { OfficeBuildingIcon, UsersIcon } from '@heroicons/react/solid';
+import Navigation from '../components/Navigation.tsx';
+import { PersonCard } from '../cards/PersonCard.tsx';
+//^something i needed to have done when i did create-react-app, you live and you learn
 
 
-function WomenInTech() {
+function Professionals() {
 
-    const verticalResults = useAnswersState(state => state.vertical.results) || [];
+    const verticalResults = useAnswersState(state => state.vertical.results) || [""];
+    usePageSetupEffect("professionals");
 
-    //var myCard = <StandardCard result={verticalResults} customCssClasses={{ container: "justify-start" }} />
+    //var myCard = <StandardCard result={verticalResults} customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-lg bg-white" }} />
+
+
+    const tabs = [
+        { name: 'Home', href: '/', icon: OfficeBuildingIcon, current: false },
+        { name: 'Professionals', href: '/professionals', icon: UsersIcon, current: true },
+    ]
 
     return (
-        <div className="m-6">
-            <div className="flex items-center ml-6">
+        <div className="p-6">
+            <div className="ml-6">
                 <SearchBar customCssClasses={{ container: "w-full mb-0 mr-6" }} />
+                <Navigation tabs={tabs} />
             </div>
 
             <div className="flex m-6">
@@ -57,10 +71,27 @@ function WomenInTech() {
                 </Filters.Facets>
                 <div>
                     <AppliedFilters />
+                    {verticalResults.length === 0 &&
+                        <div>no results darn </div>
+                    }
                     <VerticalResults
-                        customCssClasses={{ results: "text-left grid grid-cols-4 gap-4 " }}
-                        //CardComponent={<StandardCard customCssClasses= {{container: "justify-start"}}/>}
-                        CardComponent={StandardCard}
+                        displayAllOnNoResults={false}
+                        customCssClasses={{ results: "text-left grid grid-cols-4 gap-6 ", container: "pt-6" }}
+                        // CardComponent={<StandardCard customCssClasses= {{container: "justify-start"}}/>}
+                        //CardComponent={StandardCard}
+                        CardComponent={
+                            ({ result }) => <PersonCard
+                                result={result}
+                                //cssCompositionMethod={"replace"}
+                                //customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-lg bg-white hover:shadow-xl hover:cursor-pointer", header: "font-medium" }}
+                                fieldMappings={{
+                                    title: {
+                                        apiName: "name",
+                                        mappingType: "FIELD"
+                                    }
+                                }}
+                            />
+                        }
 
                     />
                 </div>
@@ -71,4 +102,4 @@ function WomenInTech() {
     )
 }
 
-export default WomenInTech;
+export default Professionals;
