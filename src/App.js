@@ -1,18 +1,18 @@
 import './App.css';
 import { AnswersHeadlessProvider } from '@yext/answers-headless-react';
-import ParksPage from './pages/ParksPage.tsx';
+import WomenInTech from './pages/women.tsx';
 function App() {
   return (
     <div className="App">
 
       <AnswersHeadlessProvider
-        apiKey='06812f79aa06d16a1c6b83d76b5b4350'
-        experienceKey='national-parks'
+        apiKey='8feb7a0cdb9e035db0f5db3ab0cb048c'
+        experienceKey='women-in-tech'
         locale='en'
-        verticalKey='locations'
+        verticalKey='professionals'
       >
 
-        <ParksPage />
+        <WomenInTech />
 
       </AnswersHeadlessProvider>
     </div>
