@@ -49,16 +49,16 @@ export default function Navigation(props: NavigationProps) {
                     Select a tab
                 </label>
                 {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
-                <select
+                <div
                     id="tabs"
-                    name="tabs"
+                    //name="tabs"
                     className="block w-full focus:ring-neutral-800 focus:border-neutral-800 border-gray-300 rounded-md"
                     defaultValue={props.tabs.find((tab) => tab.current).name}
                 >
                     {props.tabs.map((tab) => (
                         <Link to={tab.href}>{tab.name}</Link>
                     ))}
-                </select>
+                </div>
             </div>
             <div className="hidden sm:block">
                 <div className="border-b border-gray-200">
