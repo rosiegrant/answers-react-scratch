@@ -16,7 +16,8 @@
 */
 import { CreditCardIcon, OfficeBuildingIcon, UserIcon, UsersIcon } from '@heroicons/react/solid'
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
+    //BrowserRouter as Router,
     Routes,
     Route,
     Link
