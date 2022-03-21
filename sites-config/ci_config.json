@@ -7,6 +7,9 @@
     ],
     "hbsTemplates": []
   },
+  "buildArtifacts": {
+    "build_cmd": ":"
+  },
   "baseImageTag": "node-17",
   "livePreview": {
     "serveCmd": "PORT=8080 npm run start"
