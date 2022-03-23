@@ -14,23 +14,15 @@ function App() {
   return (
     <div className="App">
       <Router>
-
         <AnswersHeadlessProvider
           apiKey='8feb7a0cdb9e035db0f5db3ab0cb048c'
           experienceKey='women-in-tech'
           locale='en'
         >
-
-
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
           <Routes>
             <Route path="/professionals" element={<Professionals />} />
             <Route path="/" element={<Universal />} />
           </Routes>
-
-
-
         </AnswersHeadlessProvider>
       </Router>
     </div>

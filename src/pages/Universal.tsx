@@ -38,14 +38,14 @@ function Universal() {
                 verticalConfigMap={{
                     'professionals': {
                         CardComponent: ({ result }) => <StandardCard result={result}
-                            cssCompositionMethod={"replace"}
-                            customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-sm bg-white hover:shadow-md hover:cursor-pointer" }}
-                            fieldMappings={{
-                                title: {
-                                    apiName: "name",
-                                    mappingType: "FIELD"
-                                }
-                            }}
+                            //cssCompositionMethod={"replace"}
+                            customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-sm bg-white", header: "font-medium" }}
+                        // fieldMappings={{
+                        //     title: {
+                        //         apiName: "name",
+                        //         mappingType: "FIELD"
+                        //     }
+                        // }}
                         />,
                         label: "Bad A** Women",
                         SectionComponent: ({ results }) =>
@@ -54,8 +54,8 @@ function Universal() {
                                 verticalKey="professionals"
                                 CardComponent={({ result }) => <StandardCard
                                     result={result}
-                                    cssCompositionMethod={"replace"}
-                                    customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-sm bg-white hover:shadow-md hover:cursor-pointer" }}
+                                    // cssCompositionMethod={"replace"}
+                                    customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-sm bg-white", header: "font-medium" }}
                                     fieldMappings={{
                                         title: {
                                             apiName: "name",

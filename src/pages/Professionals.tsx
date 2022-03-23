@@ -82,8 +82,8 @@ function Professionals() {
                         CardComponent={
                             ({ result }) => <PersonCard
                                 result={result}
-                                //cssCompositionMethod={"replace"}
-                                //customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-lg bg-white hover:shadow-xl hover:cursor-pointer", header: "font-medium" }}
+                                cssCompositionMethod={"replace"}
+                                customCssClasses={{ container: "flex flex-col justify-start rounded-lg mb-4 p-4 shadow-lg bg-white hover:shadow-xl hover:cursor-pointer", header: "font-medium" }}
                                 fieldMappings={{
                                     title: {
                                         apiName: "name",

@@ -222,9 +222,9 @@ export interface StandardCardCssClasses {
 const builtInCssClasses: StandardCardCssClasses = {
     container: "flex flex-col justify-start rounded-lg shadow-lg bg-white hover:shadow-xl hover:cursor-pointer",
     header: 'flex text-gray-800 font-medium',
-    body: 'flex justify-end pt-2.5 text-base',
+    body: 'flex flex-col justify-end pt-2.5 text-base',
     descriptionContainer: 'w-full',
-    ctaContainer: 'flex flex-col justify-end ml-4',
+    ctaContainer: 'flex flex-col justify-end ml-4 mt-4',
     cta1: 'min-w-max bg-primary-600 text-white font-medium rounded-lg py-2 px-5 shadow',
     cta2: 'min-w-max bg-white text-primary-600 font-medium rounded-lg py-2 px-5 mt-2 shadow',
     ordinal: 'mr-1.5 text-lg font-medium',
@@ -282,9 +282,9 @@ export function PersonCard(props: StandardCardProps): JSX.Element {
 
     // TODO (cea2aj) We need to handle the various linkType so these CTAs are clickable
     function renderCTAs(cta1?: CtaData, cta2?: CtaData) {
-        // const onClick = () => {
-        //     reportAnalyticsEvent(result, 'CTA_CLICK');
-        // };
+        const onClick = () => {
+            //     reportAnalyticsEvent(result, 'CTA_CLICK');
+        };
         return (<>
             {(cta1 ?? cta2) &&
                 <div className={cssClasses.ctaContainer}>
